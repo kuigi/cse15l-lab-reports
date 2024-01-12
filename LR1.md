@@ -23,6 +23,7 @@ The output is not an error.
 The working directory was `/home` when the command was run. 
 This time, we provided an argument to `cd`, which was `/home/lecture1/`. 
 This provides a directory for us to enter using `cd`, and through this we can now see on the left side that we are now accessing the `/home/lecture1/` directory.
+This is not an error.
 
 
 **Using a path to file `/home/lecture1/README`:**
@@ -46,7 +47,7 @@ The terminal states that `/home/lecture1/README` is "Not a directory" and does n
 
 
 The current working directory is `/home` when command is run.
-The command `ls` lists all of the files and folders at the path given by the following argument. However, since we do not provide a path argument, there is nothing shown. 
+The command `ls` lists all of the files and folders at the path given by the following argument. However, since we do not provide a path argument, it simply provides the files/folders in the current directory. Here, it is only the folder lecture1.
 This is not an error.
 
 
