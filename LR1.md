@@ -69,8 +69,8 @@ There is no error.
 
 
 The cwd is `/home` when file is run.
-Using the `ls` command, we provide the path of a single README file this time. The output is not a file name, but rather the file path.
-I am not sure if this is an error, or if this is the intended output of using the `ls` command with a file path.
+Using the `ls` command, we provide the path of a single README file this time. This has the `ls` command print out the file path for that file. 
+This is not an error.
 
 
 ## Command `cat`
@@ -83,7 +83,7 @@ I am not sure if this is an error, or if this is the intended output of using th
 
 
 The current working directory is `/home`.
-The command `cat` is used to print the contents of one or more files of the paths given as an argument. Since we pass in no arguments, nothing is printed.
+The command `cat` is used to print the contents of one or more files of the paths given as an argument. Since we pass in no arguments, nothing is printed. Instead, the `cat` command is now taking in keyboard input, if we typed something else it would print it back to us.
 This is not an error.
 
 
@@ -94,8 +94,7 @@ This is not an error.
 
 
 The current working directory is `/home`.
-This time, we pass in the path for a directory, `/home/lecture1/`. However, since this is not a path to a file, the `cat` command does not print out its contents, instead saying the path "Is a directory".
-This is not an error. 
+This time, we pass in the path for a directory, `/home/lecture1/`. However, since this is not a path to a file, the `cat` command does not print out its contents, instead stating there is an error by saying the path "Is a directory".
 
 
 **Using a path to file `/home/lecture1/README`**
