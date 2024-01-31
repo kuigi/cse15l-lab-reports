@@ -99,6 +99,7 @@ Above is a screenshot using `ls` with the .ssh directory on my computer's User f
 For the public key:
 
 ![image](https://github.com/kuigi/cse15l-lab-reports/assets/121076589/0efedc27-f141-41ec-9490-2eedd61c90ca)
+
 Above is a screenshot using `ls` with the .ssh directory containing the file "authorized_keys", which is the saved .pub file I got from my computer. Its file path is `/home/linux/ieng6/oce/1n/lbartulo/.ssh/authorized_keys`.
 
 And here is the terminal not asking me for a password after I log into the ieng6 account:
