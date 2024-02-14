@@ -91,5 +91,103 @@ the second half.
 
 # Part 2: Researching Commands
 
-In this part, I will be exploring the `find` command and demonstrating some interesting options and ways to use the command.
+In this part, I will be exploring the `grep` command and demonstrating some interesting options and ways to use the command.
+We will be using the commands on the `docsearch` folder from Lab 5 as well as the .txt files in it.
+All command line options for `grep` and their explanations will be sourced from [this Linux grep help page from geeksforgeeks.org.](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
 
+This first one will use the usage of the `-n` option with grep.
+In one of the files in `technical/biomed`, we can see exactly what line the Results and Conclusion of the report
+in this text file.
+Inputting:
+```
+grep -n "Results" technical/biomed/1471-2091-3-23.txt
+```
+We get:
+```
+97:        Results
+```
+This enables us to immediately find where the "Results" section of this article is, which is useful when going over
+scientific articles such as this one.
+We can do the same for "Conclusion".
+Inputting:
+```
+grep -n "Conclusion" technical/biomed/1471-2091-3-23.txt
+```
+We get: 
+```
+452:        Conclusions
+```
+Again, we can find exactly what line the "Conclusions" section of the article is, which is very useful especially if the article is long and we want to have something to immediately reach a certain section of that article.
+
+A fundamental command for grep is the `-l` command, which searches for files with a certain string in their files.
+Example:
+```
+grep -l "Mitchell" *
+```
+When you `cd` into `~/docsearch/technical/government/Post_Rate_Comm`, you can see which files which mention Mitchell, producing this output:
+```
+Mitchell_6-17-Mit.txt
+Mitchell_RMVancouver.txt
+```
+Another example when you `cd` into ~/docsearch/technical/plos`:
+```
+ grep -l "eukaryotic" *
+```
+Produces:
+```
+journal.pbio.0020013.txt
+journal.pbio.0020042.txt
+journal.pbio.0020133.txt
+journal.pbio.0020306.txt
+journal.pbio.0020354.txt
+journal.pbio.0030076.txt
+journal.pbio.0030094.txt
+pmed.0020210.txt
+```
+This presents every file that contains the word "eukaryotic" in its file.
+
+To ensure you get the exact word, and not just words containing that specific substring, you can use the
+`-w` option.
+
+For example, when you `cd` into `technical/biomed`, you may want to differentiate when you want the word "tension" versus the word "hypertension".
+Here, you can differentiate by using `-w`.
+Example:
+```
+ grep -w  "tension" *
+```
+Produces:
+```
+1471-2121-3-4.txt:        stiffness of the cell by introducing tension into the
+1471-2121-3-4.txt:        less stiff in surface tension than the wild type parental
+1471-2121-3-4.txt:          or surface tension is the 
+appropriate parameter to
+1471-2156-4-6.txt:          chromatids, and the tension on chromosomes produced by
+1471-2202-2-9.txt:          tension applied by the outward migrating growth cone.
+1471-2229-2-8.txt:          evaluated by the tension table and pressure plate
+1471-2318-3-2.txt:          where there has traditionally been tension between
+1471-5945-2-13.txt:        relation to the tension in 
+the surrounding ECM, we utilized
+1471-5945-2-13.txt:            reduction of tension in the ECM
+1471-5945-2-13.txt:          Effect of tension in the 
+ECM
+1471-5945-2-13.txt:        - We found that matrix tension was dominant over TGFβ1
+``` 
+And a whole lot of other files!
+Compared to doing:
+```
+ grep -w  "hypertension" *
+```
+Which produces an entirely different output:
+
+```
+1468-6708-3-1.txt:          baseline. Clinical covariates include hypertension,
+1468-6708-3-10.txt:        active-controlled hypertension component is designed to
+1468-6708-3-10.txt:        the hypertension component 
+began in February, 1994, and
+1468-6708-3-10.txt:          least 90 mm Hg, or took medication for hypertension, and
+1468-6708-3-4.txt:          moderate essential hypertension [ 1 ] . The study
+```
+And a whole lot of other files!
+
+As you can see, you can specify what you want `grep` to do and tailor it specifically to your use cases, and it is important
+to know what each option does and what each option can't do in order to get exactly what you want.
