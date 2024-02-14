@@ -189,5 +189,54 @@ began in February, 1994, and
 ```
 And a whole lot of other files!
 
+Finally, here is the option -R for when you want to search for a pattern in a whole lot of files and directories using recursion.
+Example (`cd` into `technical/`):
+```
+$ grep -R "dysregulation" technical/
+```
+Produces:
+```
+technical/biomed/1471-2180-2-26.txt:        dysregulation of cyclin D
+technical/biomed/1471-2202-2-16.txt:        dysregulation of PLD2 activity in AD. The first is based on     
+technical/biomed/1471-2202-2-16.txt:        dysregulation of PC metabolism. Indeed evidence of an
+technical/biomed/1471-2210-1-10.txt:        test if a 
+dysregulation of MAP kinases was associated with      
+technical/biomed/1471-2210-1-10.txt:        It has been suggested that a dysregulation of MAP
+technical/biomed/1471-230X-3-3.txt:        IBD [ 48 49 50 ] . Moreover, dysregulation of cytokine
+technical/biomed/1471-2377-2-4.txt:        nitric oxide pathway dysregulation [ 5 9 ] suggesting
+technical/biomed/1471-244X-2-9.txt:        dysregulation of body weight. The role of impulsivity in
+technical/biomed/1477-7827-1-9.txt:        associated 
+with dysregulation of folliculogenesis and
+technical/biomed/ar612.txt:        osteoclast dysregulation leads to osteoporosis (decreased
+technical/biomed/ar774.txt:        unknown. Immune dysregulation appears to play a key
+technical/plos/pmed.0020162.txt:        ultimately harmful dysregulationâ€”of physiological systems that respond
+technical/plos/pmed.0020273.txt:        were ubiquitously altered in both IBD and non-IBD samples, reflecting dysregulation of
+```
+Which shows the appearance of dysregulation in both the `biomed/` and `plos/` directory files in the overall directory `technical/`.
+You can use this on another search term which you might think may show up in multiple disciplines, such as those covered in the text files in this folder. 
+Example, the city Philadelphia:
+```
+grep -R "Philadelphia" technical/
+```
+Produces:
+```
+technical/911report/chapter-13.3.txt:                Philadelphia Inquirer, Aug. 21, 1998, p. A1. For a reaction to the later criticism
+technical/911report/chapter-7.txt:                flew from Fort Lauderdale to Philadelphia, where he trained at Hortman Aviation and
+technical/biomed/1471-2121-3-18.txt:          Center, 
+Philadelphia, PA, [ 47 ] ). The pEBG-JNK was a        
+technical/biomed/1471-2172-3-4.txt:          Bergelson, (Children's Hospital of Philadelphia,
+technical/biomed/1471-2172-3-4.txt:          Philadelphia, PA). The forward primer,
+technical/biomed/1471-2172-3-9.txt:          cytokine 
+was a kind gift from Trinchieri G, Philadelphia,      
+technical/biomed/1471-2202-2-9.txt:          Neurology, Children's Hospital, Philadelphia, PA) were
+technical/biomed/1471-2202-3-19.txt:          Laboratories (Philadelphia, PA), Win 444,441 was obtained     
+technical/biomed/1471-2210-3-1.txt:          (Philadelphia, PA), Win 444,441 was from Sterling
+technical/biomed/1471-2334-2-27.txt:          Philadelphia, PA. Cellulose acetate phthalate (CAP) was a     
+technical/biomed/1471-2415-3-1.txt:          Interchange (Philadelphia, PA). Lenses were enucleated
+technical/biomed/1471-2490-3-2.txt:        Medical Center, Philadelphia, Marcella et al [ 8 ] noted an      
+```
+Among many other files (omitted for sanity)!
+
 As you can see, you can specify what you want `grep` to do and tailor it specifically to your use cases, and it is important
 to know what each option does and what each option can't do in order to get exactly what you want.
+
