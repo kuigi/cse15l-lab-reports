@@ -93,7 +93,7 @@ the second half.
 
 In this part, I will be exploring the `grep` command and demonstrating some interesting options and ways to use the command.
 We will be using the commands on the `docsearch` folder from Lab 5 as well as the .txt files in it.
-All command line options for `grep` and their explanations will be sourced from [this Linux grep help page from geeksforgeeks.org.](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
+All command line options for `grep` and their explanations will be sourced from this Linux grep help page from geeksforgeeks.org: https://www.geeksforgeeks.org/grep-command-in-unixlinux/.
 
 This first one will use the usage of the `-n` option with grep.
 In one of the files in `technical/biomed`, we can see exactly what line the Results and Conclusion of the report
@@ -144,7 +144,7 @@ journal.pbio.0030076.txt
 journal.pbio.0030094.txt
 pmed.0020210.txt
 ```
-This presents every file that contains the word "eukaryotic" in its file.
+This presents every file that contains the word "eukaryotic" in its file. This is useful for if you want to look for a file that explores or mentions a certain topic, such as in this case eukaryotic organisms.
 
 To ensure you get the exact word, and not just words containing that specific substring, you can use the
 `-w` option.
@@ -189,7 +189,7 @@ began in February, 1994, and
 ```
 And a whole lot of other files!
 
-Finally, here is the option -R for when you want to search for a pattern in a whole lot of files and directories using recursion.
+The option -R for when you want to search for a pattern in a whole lot of files and directories using recursion.
 Example (`cd` into `technical/`):
 ```
 $ grep -R "dysregulation" technical/
@@ -236,6 +236,42 @@ technical/biomed/1471-2415-3-1.txt:          Interchange (Philadelphia, PA). Len
 technical/biomed/1471-2490-3-2.txt:        Medical Center, Philadelphia, Marcella et al [ 8 ] noted an      
 ```
 Among many other files (omitted for sanity)!
+
+Finally, the option to print `n` number of lines either before or after the result is an option you can do.
+You can use this in the context of this directory to perhaps get some contextual information before a search term that you want, or after it as well. `-An` for n number of lines shows n lines after the line with the search term, `-Bn` shows n lines before the search term, and `-Cn` shows n lines before and after the search term. 
+For example, (`cd` into `government/About_LSC`)
+```
+grep -B3 "Polk County v. Dodson" LegalServCorp_v_VelazquezOpinion.txt
+```
+Shows
+```
+defending the decision to deny benefits will deliver the
+government's message in the litigation. The LSC lawyer, however,
+speaks on the behalf of his or her private, indigent client. Cf.
+Polk County v. Dodson, 454 U. S. 312, 321-322 (1981) (holding that
+```
+Which provides some background contextual information into the case that you are researching in this text file.
+
+To get more information (before and after the line), you can use `-Cn` for n number of lines before and after a search term to get that many lines before and after the line with the search term.
+
+For example, with the same file
+```
+grep -C3 "Polk County v. Dodson" LegalServCorp_v_VelazquezOpinion.txt
+```
+Shows 
+```
+defending the decision to deny benefits will deliver the
+government's message in the litigation. The LSC lawyer, however,
+speaks on the behalf of his or her private, indigent client. Cf.
+Polk County v. Dodson, 454 U. S. 312, 321-322 (1981) (holding that
+a public defender does not act "under color of 
+state law" because
+he "works under canons of professional responsibility that mandate
+his exercise of independent judgment on behalf 
+of the client" and
+```
+Which provides you with even more information about that particular case directly from the command line!
+
 
 As you can see, you can specify what you want `grep` to do and tailor it specifically to your use cases, and it is important
 to know what each option does and what each option can't do in order to get exactly what you want.
